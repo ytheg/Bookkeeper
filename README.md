@@ -31,7 +31,7 @@ BookKeeper is **under serious development**. Here's what's working and what's pl
 ### In Progress
 - **Error Logging Module**: Improving error handling and logging.
 - **DBMS Library**: Enhancing functionality and performance.
-- **TUI Development**: Building out the user interface for accounting operations.
+- **TUI Development**: Building out the user interface for accounting operations - Dynamic table for Database presentation.
 
 ### Planned Features
 - **Concurrency Daemon**: Support for concurrent database access.
