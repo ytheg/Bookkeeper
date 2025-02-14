@@ -138,7 +138,7 @@ int	main(int argc, char *argv[]){
 
 		buffer[pl + 1] = '\0';
 
-		printf("Count: %d, Buffer: \n%s\nCurrent Position: %d\n", count, buffer, position);
+		//printf("Count: %d, Buffer: \n%s\nCurrent Position: %d\n", count, buffer, position);
 
 	
 		/*clear the file array*/
@@ -162,7 +162,7 @@ int	main(int argc, char *argv[]){
 		while	(line != NULL && (strncmp(line, "#schema END", 11) != 0)){
 			/*read line*/
 			if	(line != NULL){
-				printf("Line: %s\nPosition: %d\n", line, position);
+				//printf("Line: %s\nPosition: %d\n", line, position);
 
 				/*if the file contains '#dictionary' - call dp_dictionary*/
 				if	(strncmp(line, "#dictionary", 12) == 0){
@@ -258,7 +258,7 @@ void	dp_file(char *buffer, char *line, off_t *position){
 	int f, ai;
 
 	if	(filename != NULL){
-		printf("File name: %s\n", filename);
+		//printf("File name: %s\n", filename);
 
 		
 		f = array_search(fname_array, MAXFILES, filename);
@@ -313,9 +313,9 @@ void	dp_file(char *buffer, char *line, off_t *position){
 
 	/*print array*/
 	for	(int i = 0; ftable_array[ai][i] != -1; i++){
-		printf("%s ", dict_array[ftable_array[ai][i]]);
+		//printf("%s ", dict_array[ftable_array[ai][i]]);
 		}
-	printf("\n");
+	//printf("\n");
 
 	array_print(fname_array, MAXFILES);
 	}
@@ -396,8 +396,8 @@ void	dw_hfile(void){
 	/*print the file name array using SAE function using the dictionary*/
 	dsae_print(fd, "\n\nenum\tfile_index{\n", fname_array, 0, "");
 
-	char *includes = "#include \"dml.h\"\n\n\n";
-	write(fd, includes, strlen(includes));
+	//char *includes = "#include \"dml.h\"\n\n\n";
+	//write(fd, includes, strlen(includes));
 
 	close(fd);
 	}
@@ -480,7 +480,7 @@ void	dw_cfile(void){
 			
 			mdsae_print(fd, titlex, ktable_array[i][m]);
 
-			printf("%s\n", titlex);
+			//printf("%s\n", titlex);
 
 			free(titlex);
 
@@ -519,9 +519,9 @@ void	dsae_print(int fd, char *title, char **array, int end_flag, char *delim){
 	write(fd, title, strlen(title));
 
 	for	(int i = 0; array[i] != NULL; i++){
-		printf("title: %s = String = %s\n", title, array[i]);
+		//printf("title: %s = String = %s\n", title, array[i]);
 		}
-	printf("Breakpoint\n");
+	//printf("Breakpoint\n");
 
 	char *string;
 	int length;
@@ -556,7 +556,7 @@ void	dsae_print(int fd, char *title, char **array, int end_flag, char *delim){
 
 /* -- write array using 2 dimensional array to file*/
 void	mdsae_print(int fd, char *title, int array[]){
-	printf("MDSAE Function\n");
+	//printf("MDSAE Function\n");
 	write(fd, title, strlen(title));
 
 	char *string;
@@ -715,7 +715,7 @@ int	array_insert_int(int array[], int s, int value){
 void	array_print(char *array[], int s){
  	for	(int i = 0; i < s; i++){
 		if	(array[i] != NULL){
-			printf("%d: %s\n", i, array[i]);
+			//printf("%d: %s\n", i, array[i]);
 			}
 		}
 	}
@@ -728,13 +728,13 @@ void	derror(enum error_code code){
 		/*if code test for the code*/
 		if	(erc[i].erc == code){
 			/*print the error*/
-			printf("Error: %s\n", erc[i].error_message);
+			//printf("Error: %s\n", erc[i].error_message);
 			/*return*/
 			return;
 			}
 		}
 	/*error check and return*/
-	printf("Error: TERMINAL\n");
+	//printf("Error: TERMINAL\n");
 	}
 
 

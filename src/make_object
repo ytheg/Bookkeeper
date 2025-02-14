@@ -1,5 +1,0 @@
-gcc -c btree.c
-gcc -c dfile.c
-gcc -c ddl.c
-gcc -c logfile.c
-gcc -c dml.c
