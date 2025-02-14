@@ -12,7 +12,7 @@ LIBRARY = libdbms.a
 OBJS = btree.o dfile.o logfile.o dml.o ddl.o
 
 # Targets
-all: dbinit program
+all: dbinit bookkeeper
 
 # Rule to create the static library
 $(LIBRARY): btree.o dfile.o logfile.o dml.o
@@ -35,8 +35,8 @@ dbinit: dbinit.c ddl.o $(LIBRARY)
 	$(CC) $(CFLAGS) -o dbinit dbinit.c ddl.o -L. -ldbms
 
 # Rule to compile program (depends on program.c, ddl.o, and the static library)
-program: program.c ddl.o $(LIBRARY)
-	$(CC) $(CFLAGS) -o program program.c ddl.o -lncurses -lpanel -L. -ldbms
+bookkeeper: program.c ddl.o $(LIBRARY)
+	$(CC) $(CFLAGS) -o bookkeeper program.c ddl.o -lncurses -lpanel -L. -ldbms
 
 # Rule to compile object files
 %.o: %.c
@@ -44,7 +44,7 @@ program: program.c ddl.o $(LIBRARY)
 
 # Clean up build files
 clean:
-	rm -f *.o $(LIBRARY) dbmscc dbinit program ddl.h ddl.c
+	rm -f *.o $(LIBRARY) dbmscc dbinit bookkeeper ddl.h ddl.c
 
 # Phony targets
 .PHONY: all clean run_dbmscc
