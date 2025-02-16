@@ -148,5 +148,3 @@ BookKeeper is designed to be **easy to understand, modify, and use**, even for b
 Happy bookkeeping! 📚💰
 
 ---
-
-This README provides a clear overview of the program, its goals, and how to get started. You can replace the placeholder screenshot paths with actual images once you have them. Let me know if you'd like to tweak anything further!
